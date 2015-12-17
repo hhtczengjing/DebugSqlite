@@ -6,14 +6,15 @@
 //  Copyright (c) 2015 why. All rights reserved.
 //
 
-#import "CHSHTTPServer.h"
-
+#import "HTTPServer.h"
 #import "PBMTool.h"
 #import "PBMHTTPConnection.h"
 #import "PBMIPTool.h"
 
 @interface PBMTool()
-@property (nonatomic, strong) CHSHTTPServer *httpServer;
+
+@property (nonatomic, strong) HTTPServer *httpServer;
+
 @end
 
 @implementation PBMTool
@@ -45,7 +46,7 @@
     if (_httpServer) {
         return;
     }
-    _httpServer = [[CHSHTTPServer alloc] init];
+    _httpServer = [[HTTPServer alloc] init];
     [_httpServer setConnectionClass:[PBMHTTPConnection class]];
     [_httpServer setType:@"_http._tcp."];
     [_httpServer setPort:12345];

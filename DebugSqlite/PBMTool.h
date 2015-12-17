@@ -7,13 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HTTPLogging.h"
 
+#ifdef DEBUG
+static const int httpLogLevel = HTTP_LOG_LEVEL_INFO | HTTP_LOG_FLAG_TRACE;
+#else
+static const int httpLogLevel = HTTP_LOG_LEVEL_OFF;
+#endif
 
 @interface PBMTool : NSObject
 
-+(void)start;
++ (void)start;
 
-+(void)setDBFilePath:(NSString*)path;
++ (void)setDBFilePath:(NSString*)path;
 
-+(NSString*)URL;
++ (NSString*)URL;
+
 @end

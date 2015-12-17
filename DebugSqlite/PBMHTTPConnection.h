@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 why. All rights reserved.
 //
 
-#import "CHSHTTPConnection.h"
+#import "HTTPConnection.h"
 
-@interface PBMHTTPConnection : CHSHTTPConnection
+@interface PBMHTTPConnection : HTTPConnection
 
 /**
  *  Set the Database file path.

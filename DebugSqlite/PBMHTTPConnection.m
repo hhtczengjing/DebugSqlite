@@ -9,7 +9,7 @@
 
 
 #import "FMDB.h"
-#import "CHSHTTPDynamicFileResponse.h"
+#import "HTTPDynamicFileResponse.h"
 #import "PBMHTTPConnection.h"
 #import "PBMHTMLBuilder.h"
 #import "NSURL+Param.h"
@@ -20,7 +20,7 @@ static NSString *kDBPath;
 
 #pragma mark - HTTPConnection Override
 
-- (NSObject<CHSHTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path {
+- (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path {
     
     NSLog(@"%@", path);
     
@@ -70,7 +70,7 @@ static NSString *kDBPath;
     
     [db close];
     
-    return [[CHSHTTPDynamicFileResponse alloc] initWithFilePath:[self filePathForURI:redirectURL]
+    return [[HTTPDynamicFileResponse alloc] initWithFilePath:[self filePathForURI:redirectURL]
                                                   forConnection:self
                                                       separator:@"%%"
                                           replacementDictionary:dict];
